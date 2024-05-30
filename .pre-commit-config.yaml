@@ -54,3 +54,11 @@ repos:
         entry: cz check --commit-msg-file $GIT_PARAMS
         language: python
         stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: update-requirements
+        name: Update requirements.txt
+        entry: bash -c 'pipenv lock -r > requirements.txt'
+        language: system
+        files: ^Pipfile$
