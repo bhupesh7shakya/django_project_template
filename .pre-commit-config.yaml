@@ -59,6 +59,6 @@ repos:
     hooks:
       - id: update-requirements
         name: Update requirements.txt
-        entry: bash -c 'pipenv lock -r > requirements.txt'
+        entry: bash -c 'pipenv requirements > .\requirements.txt'
         language: system
         files: ^Pipfile$
